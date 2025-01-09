@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      WEB3_RPC_URL: "https://your_rpc"
+      ETHERSCAN_API_KEY: "111111111111111"
+      CHAINLINK_AGGREGATOR_PROXY_ADDRESS: "0x5f4eC3Df9cbd43714FE2740f5E3616155c5b8419"
+      ETHERSCAN_BASE_URL: "https://api.etherscan.io/api"
+    volumes:
+      - .:/app
